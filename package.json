@@ -1,0 +1,21 @@
+{
+    "dependencies": {
+        "express": "^4.17.3",
+        "sqlite": "^4.0.25",
+        "sqlite3": "^5.0.2"
+    },
+    "type": "module",
+    "name": "projetomd4",
+    "version": "1.0.0",
+    "description": "API de final de modulo 4 Resilia",
+    "main": "app.js",
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    },
+    "scripts": {
+        "dev": "nodemon src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Jhack Costa",
+    "license": "ISC"
+}
