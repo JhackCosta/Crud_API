@@ -16,14 +16,13 @@ class FaleConoscoDao {
 
     buscarPorId = (id) => {
         return new Promise((resolve, reject) => {
-            this.db.get('SELECT * FROM CHAMADO WHERE ID_PROTOCOLO = ?', [id],
+            this.db.all('SELECT * FROM CHAMADO WHERE ID_PROTOCOLO = ?', [id],
                 (error, rows) => {
                     if (error) {
                         reject(error)
                     } else {
                         resolve(
                             rows
-
                         )
                     }
                 })

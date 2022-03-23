@@ -20,7 +20,6 @@ const chamadoController = (app, db) => {
                 })
         }
     })
-
     app.get('/chamado/:id', async(req, res) => {
         try {
             let id = req.params.id

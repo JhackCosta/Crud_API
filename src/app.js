@@ -11,9 +11,6 @@ const porta = 3000;
 
 controller(app, dataBase)
 
-
-
-
 app.listen(porta, () => {
     console.log(`API rodando na porta ${porta} com sucesso!`);
 });

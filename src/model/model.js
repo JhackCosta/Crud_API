@@ -13,6 +13,7 @@ class chamado {
     }
     buscarPorId = async(id) => {
         try {
+            await this.buscarIdExistente(id)
             return await this.dao.buscarPorId(id)
 
         } catch (error) {
@@ -31,7 +32,10 @@ class chamado {
     }
     deletaChamado = async(id) => {
         try {
+            await this.buscarIdExistente(id)
+
             return await this.dao.deletaChamado(id)
+
         } catch (error) {
             return {
                 "mensagem": error.message,
@@ -41,7 +45,7 @@ class chamado {
     }
     atualizaChamado = async(id, chamado) => {
         try {
-
+            await this.buscarIdExistente(id)
             return await this.dao.atualizaChamado(id, chamado)
         } catch (error) {
             return ({
@@ -51,6 +55,12 @@ class chamado {
         }
     }
 
+    buscarIdExistente = async(id) => {
+        const resposta = await this.dao.buscarPorId(id)
+        if (resposta == "") {
+            throw new Error(`Chamado do protocolo ${id} não existe`)
+        }
+    }
 }
 
 export default chamado

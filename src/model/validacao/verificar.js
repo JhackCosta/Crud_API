@@ -1,13 +1,8 @@
-class verifica {
+let verificacao = new chamado()
 
-    constructor()
-
-    _verificaChamado = async(id) => {
-        const resposta = await this.dao.pegaChamadoId(id)
-        if (resposta.id.length === 0) {
-            throw new Error(`Esse protocolo de id ${id} não existe`)
-        }
+export default verificaIdExistente = async(id) => {
+    const resposta = await verificacao.buscarPorId(id)
+    if (resposta.id.length === 0) {
+        throw new Error(`Esse protocolo de id ${id} não existe`)
     }
 }
-
-export default verifica
