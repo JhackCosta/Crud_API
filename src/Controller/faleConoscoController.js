@@ -13,7 +13,7 @@ const chamadoController = (app, db) => {
                     "erro": false
                 })
         } catch (err) {
-            res.status(400)
+            res.status(401)
                 .json({
                     "mensagem: ": err.message,
                     "erro": true
@@ -30,7 +30,7 @@ const chamadoController = (app, db) => {
                     "erro": false
                 })
         } catch (err) {
-            res.status(400)
+            res.status(401)
                 .json({
                     "mensagem: ": err.message,
                     "erro": true
@@ -50,7 +50,7 @@ const chamadoController = (app, db) => {
                     "erro": false
                 })
         } catch (error) {
-            res.status(400)
+            res.status(401)
                 .json({
                     "mensagem": error.message,
                     "erro": error
@@ -69,7 +69,7 @@ const chamadoController = (app, db) => {
                     "erro": false
                 })
         } catch (error) {
-            res.status(400)
+            res.status(401)
                 .json({
                     "mensagem": error.message,
                     "erro": error
@@ -82,13 +82,13 @@ const chamadoController = (app, db) => {
         try {
             let id = req.params.id
             const resposta = await novoChamado.deletaChamado(id)
-            res.status(200)
+            res.status(301)
                 .json({
                     "mensagem": resposta,
                     "erro": false
                 })
         } catch (error) {
-            res.status(400)
+            res.status(401)
                 .json({
                     "mensagem": error.message,
                     "erro": error
